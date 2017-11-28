@@ -1,0 +1,22 @@
+
+@mixin badge() {
+
+	.badge-container {
+		white-space: nowrap;
+	}
+
+	.badge {
+		display: inline-block;
+		position: relative;
+		top: em(-1em, $badge__size-font);
+		margin-left: em(-.75em, $badge__size-font);
+		border: em(.2em, $badge__size-font) solid $badge__color-border;
+		border-radius: em(.4em, $badge__size-font);
+		background-color: $badge__color-background;
+		padding: em(.3em, $badge__size-font) em(.6em, $badge__size-font) em(.1em, $badge__size-font);
+		line-height: 1;
+		color: $badge__color-text;
+		font-size: $badge__size-font;
+		font-weight: 600;
+	}
+}

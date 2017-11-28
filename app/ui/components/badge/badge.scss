@@ -1,0 +1,9 @@
+@import '../../configure';
+@import './badge';
+
+$badge__size-font: 1.2rem;
+$badge__color-border: lighten($color-brand-info, 2%);
+$badge__color-background: $color-brand-info-alt;
+$badge__color-text: $color-white;
+
+@include badge;

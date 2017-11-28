@@ -1,0 +1,66 @@
+
+@mixin action() {
+
+	.action {
+		padding: 2em 27em 2em 2em;
+		font-size: 1rem;
+
+		&--full-width {
+			padding-right: 2em;
+		}
+
+		&__title {
+			margin-bottom: em(2.5em, 2.5em);
+			text-transform: uppercase;
+			color: darken($color-brand-info, 20%);
+			font-size: 2.5em;
+		}
+
+		&__stat {
+			margin-bottom: 2.5em;
+		}
+
+		&__row {
+			margin-bottom: 2em;
+		}
+
+		&__props {
+			display: flex;
+			flex-wrap: wrap;
+			margin-bottom: 1em;
+		}
+
+		&__prop {
+			flex: 1 1 (100% / 3);
+			margin-bottom: .5em;
+		}
+
+		&__prop-name,
+		&__prop-value {
+			display: inline-block;
+			font-size: 1.5em;
+		}
+
+		&__prop-name {
+			margin-right: em(.6em, 1.5em);
+			color: darken($color-brand-info, 20%);
+		}
+
+		&__event-time {
+			color: $color-teal-dark;
+		}
+
+		&__event-link {
+			color: $color-brand-info-alt;
+			font-weight: normal;
+		}
+
+		&__event-icon {
+			transform: translate(0, -12%);
+			margin-right: .6em;
+			width: 1.5em;
+			height: 1em;
+			vertical-align: middle;
+		}
+	}
+}

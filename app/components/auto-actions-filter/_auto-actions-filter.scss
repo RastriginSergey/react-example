@@ -1,0 +1,9 @@
+
+@mixin auto-actions-filter() {
+
+	.auto-actions-filter {
+		border-right: .1em solid $color-teal;
+		overflow: auto;
+		font-size: 1rem;
+	}
+}

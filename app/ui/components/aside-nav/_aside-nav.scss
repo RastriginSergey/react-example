@@ -1,0 +1,79 @@
+
+@mixin aside-nav() {
+
+	.aside-nav {
+		background-color: $aside-nav__color-background;
+		overflow: auto;
+		font-size: 1rem;
+
+		&__scroller {
+			display: flex;
+			flex-direction: column;
+			min-height: 100%;
+		}
+
+		&__group {
+			display: flex;
+			flex-direction: column;
+
+			&--bottom {
+				margin-top: auto;
+			}
+		}
+
+		&__link {
+			display: inline-block;
+			transition: opacity $duration-ui-transition;
+			margin: em(1.5em, $aside-nav__size-text) 0 em(2.5em, $aside-nav__size-text);
+			cursor: pointer;
+			text-align: center;
+			line-height: 1.1;
+			font-size: $aside-nav__size-text;
+			fill: $aside-nav__color-text;
+			will-change: opacity;
+
+			&, &:hover {
+				text-decoration: none;
+				color: $aside-nav__color-text;
+			}
+
+			&:not(:hover):not(&--active):not(&--primary) {
+				opacity: .5;
+			}
+
+			&--primary {
+				margin: $aside-nav__size-primary-icon-margin 0;
+			}
+
+			@media (max-height: 714px) {
+
+				&:not(&--primary) {
+					margin: em(1em, 1.1em) 0;
+					font-size: 1.1em;
+				}
+			}
+		}
+
+		&__link-icon {
+			display: block;
+			margin: 0 auto em(.5em, $aside-nav__size-text) auto;
+			width: $aside-nav__size-icon;
+			height: $aside-nav__size-icon;
+
+			&.icon--eye {
+				width: ($aside-nav__size-icon + .2em);
+				height: ($aside-nav__size-icon - .4em);
+			}
+
+			&.icon--todo {
+				width: ($aside-nav__size-icon - .7em);
+			}
+		}
+
+		&__link--primary &__link-icon {
+			margin: 0 auto;
+			width: $aside-nav__size-primary-icon;
+			height: $aside-nav__size-primary-icon;
+		}
+	}
+}

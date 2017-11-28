@@ -1,0 +1,26 @@
+
+@mixin auto-actions-table() {
+
+	.auto-actions-table {
+		font-size: 1rem;
+
+		&__table {
+			margin-bottom: 4em;
+		}
+
+		&__footer {
+			display: flex;
+			align-items: center;
+			margin-bottom: 2em;
+		}
+
+		&__select {
+			margin-left: 2.5em;
+
+			.select__text, .select__option {
+				padding-top: em(.55em, 1.3em);
+				padding-bottom: em(.55em, 1.3em);
+			}
+		}
+	}
+}

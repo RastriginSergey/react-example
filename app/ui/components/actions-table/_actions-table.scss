@@ -1,0 +1,143 @@
+
+@mixin actions-table() {
+
+	.actions-table {
+		margin: -1.2em 0;
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0 1.2em;
+		font-size: 1rem;
+
+		&__body &__row {
+			box-shadow: 0 .1em .3em -.1em darken($color-gray-lightest, 8%);
+			border-radius: .3em;
+		}
+
+		&__body &__cell {
+			border-top: .1em solid $color-brand-info;
+			border-bottom: .1em solid $color-brand-info;
+			background-color: $color-white;
+			padding: 2em 1.3em;
+
+			&:first-child {
+				border-left: .1em solid $color-brand-info;
+				border-top-left-radius: .3em;
+				border-bottom-left-radius: .3em;
+				text-align: center;
+			}
+
+			&:last-child {
+				border-right: .1em solid $color-brand-info;
+				border-top-right-radius: .3em;
+				border-bottom-right-radius: .3em;
+			}
+
+			.switch {
+				vertical-align: middle;
+			}
+		}
+
+		&__cell--head {
+			padding-left: em(1.3em, 1.3em);
+			color: $color-brand-primary;
+			font-size: 1.3em;
+		}
+
+		&__draft-tag {
+			display: inline-block;
+			margin-bottom: 1em;
+			padding: .4em 1em .3em;
+			vertical-align: middle;
+			text-transform: uppercase;
+		}
+
+		&__icon-mail {
+			width: 2.4em;
+			height: 1.6em;
+		}
+
+		&__icon-tag,
+		&__icon-phone {
+			width: 2.4em;
+			height: 2.4em;
+		}
+
+		&__icon-skype {
+			width: 2.7em;
+			height: 2.7em;
+		}
+
+		&__icon-mail,
+		&__icon-tag,
+		&__icon-phone,
+		&__icon-skype {
+			vertical-align: middle;
+			fill: $color-gray-lighter;
+		}
+
+		&__name-link {
+			display: block;
+			margin-bottom: em(.8em, 1.5em);
+			vertical-align: middle;
+			font-size: 1.5em;
+			font-weight: normal;
+		}
+
+		&__subject {
+			margin-bottom: em(.8em, 1.3em);
+			vertical-align: middle;
+			font-size: 1.3em;
+
+			&--disabled {
+				opacity: .7;
+			}
+		}
+
+		&__time {
+			vertical-align: middle;
+			color: $color-gray-lighter;
+			font-size: 1.2em;
+		}
+
+		&__list {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			font-size: 1.2em;
+
+			.link {
+				display: inline-block;
+				max-width: em(19.5em, 1.2em);
+				overflow: hidden;
+				vertical-align: middle;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				font-size: 1em;
+				font-weight: normal;
+			}
+		}
+
+		&__tag {
+			display: inline-block;
+			margin-top: em(1em, 1.3em);
+			padding: em(.3em, 1.3em) em(1.25em, 1.3em);
+			vertical-align: middle;
+			font-size: 1.3em;
+		}
+
+		&__recipients-link {
+			font-size: 1.3em;
+			font-weight: normal;
+
+			&:not([href]):hover {
+				text-decoration: none;
+				color: $color-brand-primary;
+			}
+		}
+
+		&__number {
+			color: darken($color-brand-info-alt, 15%);
+			font-size: 1.5em;
+		}
+	}
+}

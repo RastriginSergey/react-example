@@ -1,0 +1,128 @@
+/**
+ * Global variables
+ */
+
+// Sizes
+$size-font-base: .625rem;
+$size-font: 1.4rem;
+$size-line: 1.5;
+
+// Durations
+$duration-ui-transition: .2s;
+
+// Basic colors
+$color-white: white !default;
+$color-black: black !default;
+$color-red: #d9534f !default;
+$color-orange: #f7921f !default;
+$color-orange-light: #ffb45e !default;
+$color-yellow: #ffe84f !default;
+$color-green: #1fc493 !default;
+$color-blue: #4a628b !default;
+$color-teal-green: #207d6a !default;
+$color-teal-green-light: #50e3c2 !default;
+$color-teal-blue: #49bff7 !default;
+$color-teal-dark: #b1bbcc !default;
+$color-teal: #eaeef5 !default;
+$color-teal-light: #f2f5f9 !default;
+$color-pink: #f19da8 !default;
+$color-purple: #613d7c !default;
+$color-placeholder: darken($color-teal, 8%) !default;
+
+// Grayscale colors
+$color-gray-dark: #292b2c !default;
+$color-gray: #464a4c !default;
+$color-gray-light: #636c72 !default;
+$color-gray-lighter: #a6adb2 !default;
+$color-gray-lightest: #f7f7f9 !default;
+
+// Semantic colors
+$color-brand-primary: $color-blue !default;
+$color-brand-success: $color-green !default;
+$color-brand-success-alt: lighten($color-green, 45%) !default;
+$color-brand-info: $color-teal !default;
+$color-brand-info-alt: $color-teal-blue !default;
+$color-brand-warning: $color-orange !default;
+$color-brand-warning-alt: $color-yellow !default;
+$color-brand-danger: $color-red !default;
+$color-brand-danger-alt: $color-pink !default;
+$color-brand-inverse: $color-gray-dark !default;
+
+// Semantic colors map
+/* stylelint-disable scss/dollar-variable-colon-newline-after, indentation */
+$colors-brand: (
+	primary: (
+		bg: $color-brand-primary,
+		hg: lighten($color-brand-primary, 8%),
+		ag: darken($color-brand-primary, 4%),
+		fg: $color-white
+	),
+	secondary: (
+		bg: $color-brand-info,
+		hg: lighten($color-brand-info, 2%),
+		ag: darken($color-brand-info, 3%),
+		fg: lighten($color-brand-primary, 30%)
+	),
+	success: (
+		bg: $color-brand-success,
+		hg: lighten($color-brand-success, 4%),
+		ag: darken($color-brand-success, 4%),
+		fg: $color-white
+	),
+	success-alt: (
+		bg: $color-brand-success-alt,
+		hg: lighten($color-brand-success-alt, 7%),
+		ag: darken($color-brand-success-alt, 4%),
+		fg: $color-brand-success
+	),
+	info: (
+		bg: $color-brand-info,
+		hg: lighten($color-brand-info, 2%),
+		ag: darken($color-brand-info, 3%),
+		fg: $color-blue
+	),
+	info-alt: (
+		bg: $color-brand-info-alt,
+		hg: lighten($color-brand-info-alt, 8%),
+		ag: darken($color-brand-info-alt, 4%),
+		fg: $color-white
+	),
+	warning: (
+		bg: $color-brand-warning,
+		hg: lighten($color-brand-warning, 8%),
+		ag: darken($color-brand-warning, 4%),
+		fg: $color-white
+	),
+	warning-alt: (
+		bg: $color-brand-warning-alt,
+		hg: lighten($color-brand-warning-alt, 7%),
+		ag: darken($color-brand-warning-alt, 4%),
+		fg: $color-white
+	),
+	danger: (
+		bg: $color-brand-danger,
+		hg: lighten($color-brand-danger, 8%),
+		ag: darken($color-brand-danger, 4%),
+		fg: $color-white
+	),
+	danger-alt: (
+		bg: $color-brand-danger-alt,
+		hg: lighten($color-brand-danger-alt, 4%),
+		ag: darken($color-brand-danger-alt, 4%),
+		fg: $color-white
+	)
+);
+/* stylelint-enable */
+
+// Helper for calculation relative size in `em`
+@function em($size, $base: $size-font) {
+	@return strip-unit($size) / strip-unit($base) * 1em;
+}
+
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+
+	@return $number;
+}

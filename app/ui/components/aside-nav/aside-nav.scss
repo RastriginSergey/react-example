@@ -1,0 +1,12 @@
+@import '../../configure';
+@import './aside-nav';
+
+$aside-nav__size-text: 1.2em;
+$aside-nav__size-icon: em(3.6em, $aside-nav__size-text);
+$aside-nav__size-primary-link: em(7.5em, $aside-nav__size-text);
+$aside-nav__size-primary-icon: em(4.2em, $aside-nav__size-text);
+$aside-nav__size-primary-icon-margin: ($aside-nav__size-primary-link - $aside-nav__size-primary-icon) / 2;
+$aside-nav__color-background: $color-brand-primary;
+$aside-nav__color-text: $color-white;
+
+@include aside-nav;

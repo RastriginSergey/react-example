@@ -1,0 +1,10 @@
+@import 'configure';
+@import '~bootstrap/scss/bootstrap-reboot';
+
+html {
+	font-size: $size-font-base;
+
+	#root {
+		display: block;
+	}
+}
